@@ -1,0 +1,20 @@
+1       # 0 -- Use existing region mask; 1 -- Compute region mask;
+1       # 0 -- Use existing airway map; 1 -- Compute airway map;
+1       # 0 -- Use existing bronchial tree; 1 -- Compute bronchial tree;
+1       # 0 -- Use existing major vessels; 1 -- Compute major vessels;
+1       # 0 -- Use existing vesselness map; 1 -- Compute vesselness map;
+1       # 0 -- Skip computing combined obstacles; 1 -- Compute combined obstacles;
+0       # 0 -- Skip computing airway skeleton; 1 -- Compute airway skeleton;
+0       # 0 -- Do not provide empty manual segmentation file; 1 -- Provide empty manual segmentation file;
+0       # 0 -- Input image is ex vivo; 1 -- Input image is in vivo;
+0       # 0 -- Do not downsample input image; 1 -- Downsample input image;
+0       # 0 -- Do not consider high-intensity regions as obstacles; 1 -- Consider high-intensity regions as obstacles;
+0       # 0 -- Skip manual check for bronchial tube threshold; 1 -- Enable manual check for bronchial tube threshold;
+0       # 0 -- Skip outputing to text files; 1 -- Save final obstacles and costs as text files;
+0       # 0 -- Save only final output images; 1 -- Save intermediate images;
+-100    # Threshold for computing region mask (valid range [-1200, -200]). Suggest -100 for procine lung, -420 for human lung.
+1 18    # Minimum and maximum scales for airway segmentation, unit is number of voxels. Suggest 1 18.
+160     # Threshold for reconstructing airway from airway map (valid range [0, 1000]). Suggest 160.
+300     # Threshold for reconstructing major vessels (valid range [0, 1000]). Suggest in_vivo ? 600 : 300.
+-200    # Threshold for determining high-intensity regions (valid range [-1200, 5000]). Suggest -200.
+-1001   # Threshold for reconstructing large bronchial tubes (valid range [-1200, -500]). Anything lower than -1000 will trigger adaptive threshold search.
